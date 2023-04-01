@@ -20,6 +20,7 @@ void main() {
   runApp(
     MaterialApp(
       home: MyApp(),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
                 EdgeInsets.only(left: SizeConfig.safeBlockHorizontal! * 13),
             child: FaIcon(
               FontAwesomeIcons.hourglassHalf,
-              size: 26,
+              size: 33,
             )),
         label: 'Reported',
       ),
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
         icon: Container(
             child: FaIcon(
           FontAwesomeIcons.solidUser,
-          size: 26,
+          size: 33,
         )),
         label: 'Profile',
       ),

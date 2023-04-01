@@ -18,7 +18,6 @@ class ScaffoldWithBottomNavBar extends StatefulWidget {
 }
 
 class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
-
   int _locationToTabIndex(String location) {
     final index =
         widget.tabs.indexWhere((t) => location.startsWith(t.initialLocation));
@@ -40,40 +39,44 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     SizeConfig().init(context);
     return Scaffold(
       body: widget.child,
-      floatingActionButton:SizedBox(
-        height: SizeConfig.blockSizeHorizontal! * 18,
+      floatingActionButton: SizedBox(
+        height: SizeConfig.blockSizeHorizontal! * 22,
         child: FittedBox(
-          child: FloatingActionButton( //Floating action button on Scaffold
-          backgroundColor: Color(0XFF47466D),
-          onPressed: (){
+          child: FloatingActionButton(
+            //Floating action button on Scaffold
+            backgroundColor: Color(0XFF47466D),
+            onPressed: () {
               context.go('/report');
-          },
-          child: SizedBox(
-            height: SizeConfig.blockSizeHorizontal! * 10,
-            child: FittedBox(
-              child: Icon(
-                Icons.add,
-                
+            },
+            child: SizedBox(
+              height: SizeConfig.blockSizeHorizontal! * 10,
+              child: FittedBox(
+                child: Icon(
+                  Icons.add,
+                ),
               ),
-            ),
-          ), //icon inside button
+            ), //icon inside button
           ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar:  Container(
-          decoration: const BoxDecoration(                                                   
-            borderRadius: BorderRadius.only(                                           
-              topRight: Radius.circular(30), topLeft: Radius.circular(30)),            
-            boxShadow: [                                                               
-              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),       
-            ],
-          ),        
+      bottomNavigationBar: Container(
+        height: 75,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+          boxShadow: [
+            BoxShadow(
+                color: Color.fromARGB(255, 182, 182, 182),
+                spreadRadius: 0,
+                blurRadius: 20),
+          ],
+        ),
         child: ClipRRect(
-          borderRadius: const BorderRadius.only(                                           
-            topLeft: Radius.circular(30.0),                                            
-            topRight: Radius.circular(30.0),                                           
-            ),  
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
+          ),
           child: BottomNavigationBar(
             showSelectedLabels: false,
             showUnselectedLabels: false,
@@ -82,9 +85,8 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
             type: BottomNavigationBarType.fixed,
             currentIndex: _currentIndex,
             items: widget.tabs,
-            iconSize: SizeConfig.safeBlockHorizontal! * 8,
+            iconSize: SizeConfig.safeBlockHorizontal! * 10,
             onTap: (index) => _onItemTapped(context, index),
-            
           ),
         ),
       ),

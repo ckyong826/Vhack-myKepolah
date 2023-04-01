@@ -67,6 +67,39 @@ class TopBar extends StatelessWidget {
   }
 }
 
+class TopBar2 extends StatelessWidget {
+  final IconData iconright;
+  final String text;
+  const TopBar2({super.key, required this.iconright, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+      padding: EdgeInsets.only(top: size.height * 0.02),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            text,
+            style: GoogleFonts.openSans(
+              fontWeight: FontWeight.bold,
+              fontSize: size.height * 0.05,
+              textStyle: const TextStyle(color: pricolor),
+            ),
+          ),
+          Icon(
+            iconright,
+            color: pricolor,
+            size: 35,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 //Sliding List View
 class SlideBar extends StatefulWidget {
   final List<String> categories;
@@ -816,8 +849,8 @@ class _BottomBarState extends State<BottomBar> {
                         networkImagePerson:
                             "https://scontent-kul3-1.xx.fbcdn.net/v/t31.18172-8/12339515_10153417110783650_3413788825013236803_o.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=vewv1-H8cvkAX8B1se8&_nc_ht=scontent-kul3-1.xx&oh=00_AfDjDPok-IENLtiVajRqR9zRGUhTXvh1BtenQ4kMkb4eyA&oe=64463FB2",
                         networkImagePlace:
-                            "https://da4dkroembtou.cloudfront.net/wp-content/uploads/2020/12/main_1512_P4a_sf_1.jpg",
-                        title: "So many potholes here...",
+                            "https://media.thestar.com.my/Prod/2D4FCEDB-FEA9-4C19-B0FF-C58EC1AB0DF6",
+                        title: "Broken streetlight again",
                         description: "Please fix this ASAP bruh",
                         likes: 243,
                         onTap: () {},

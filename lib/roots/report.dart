@@ -29,7 +29,7 @@ class _CategoryReportState extends State<CategoryReport> {
             child: Column(
               children: [
                 Padding(padding: EdgeInsets.only(top: size.height * 0.03)),
-                const TopBar(
+                const TopBar2(
                   text: "Report",
                   iconright: Iconsax.filter_search5,
                 ),

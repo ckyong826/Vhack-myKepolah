@@ -105,10 +105,10 @@ class _CommunityState extends State<Community> {
               ),
               GreenUnderlinedText(
                   text: "Hots",
-                  top: ScreenSize.vertical! * 2.2,
+                  top: ScreenSize.vertical! * 2.0,
                   left: ScreenSize.horizontal! * 3,
                   height: ScreenSize.vertical! * 3,
-                  width: ScreenSize.horizontal! * 20,
+                  width: ScreenSize.horizontal! * 18,
                   fontSize: ScreenSize.horizontal! * 8),
               SizedBox(
                 height: ScreenSize.vertical! * 4,
